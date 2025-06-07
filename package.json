@@ -9,11 +9,12 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-community/slider": "^4.5.7",
     "expo": "~53.0.10",
+    "expo-clipboard": "~7.1.4",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
-    "react-native": "0.79.3",
-    "expo-clipboard": "~7.1.4"
+    "react-native": "0.79.3"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

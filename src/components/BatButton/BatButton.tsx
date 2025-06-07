@@ -9,13 +9,14 @@ import * as Clipboard from 'expo-clipboard';
 
 interface BatButtonProps {
   onCopy?: () => void;
+  passwordSize: number;
 }
 
-export function BatButton({ onCopy }: BatButtonProps) {
+export function BatButton({ onCopy, passwordSize }: BatButtonProps) {
   const [pass, setPass] = React.useState('');
 
   function generatePass() {
-    setPass(generatePassword());
+    setPass(generatePassword(passwordSize));
   }
 
 //   const [copiedText, setCopiedText] = useState('');
