@@ -32,24 +32,22 @@ export function BatButton({ onCopy, passwordSize }: BatButtonProps) {
   };
 
   return (
-
     <View style={styles.container}>
-
         <BatTextInput pass={pass} />
         {/* <Button title="Generate" 
             accessibilityLabel='Generate'
             onPress={() => {console.log('Generate')}}/> */}
         <Pressable style={styles.button} onPress={() => {
-            console.log('Generate'); 
+            // console.log('Generate'); 
             generatePass();
         }}>
             <Text style={styles.text}> 🦇 GENERATE 🦇 </Text>
         </Pressable>
 
-        <Pressable style={styles.button} onPress={() => {
-            console.log('Copy');
-            copyToClipboard();
-        }}>
+        <Pressable 
+          style={styles.button}
+          onPress={copyToClipboard}
+        >
             <Text style={styles.text}> 🦇 COPY 🦇 </Text>
         </Pressable>
     </View>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-
 import { View, Text } from 'react-native';
 import { BatLogo } from '../../components/BatLogo/BatLogo';
 import { BatTextInput } from '../../components/BatTextInput/BatTextInput';
@@ -21,7 +20,10 @@ export function Home() {
 
   return (
     <View style={styles.appContainer}>
-      <View style={styles.logoContainer}> <BatLogo tintColor={logoColor} /></View>
+      <StatusBar style="light" />
+      <View style={styles.logoContainer}>
+        <BatLogo tintColor={logoColor} />
+      </View>
       <View style={styles.inputContainer}> 
         <BatPasswordSize 
           value={passwordSize} 
@@ -32,8 +34,6 @@ export function Home() {
           passwordSize={passwordSize}
         />
       </View>
-     
-      <StatusBar style="light" />
     </View>
   );
 }
