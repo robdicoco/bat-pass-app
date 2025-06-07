@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 
 import { View, Text } from 'react-native';
@@ -8,11 +8,20 @@ import { BatButton } from '../../components/BatButton/BatButton';
 import { styles } from './HomeStyles';
 
 export function Home() {
+  const [logoColor, setLogoColor] = useState<string | undefined>(undefined);
+
+  const handleCopy = () => {
+    setLogoColor('#E5BF3D');
+    setTimeout(() => {
+      setLogoColor(undefined);
+    }, 1000);
+  };
+
   return (
     <View style={styles.appContainer}>
-      <View style={styles.logoContainer}> <BatLogo /></View>
+      <View style={styles.logoContainer}> <BatLogo tintColor={logoColor} /></View>
       <View style={styles.inputContainer}> 
-      <BatButton />
+        <BatButton onCopy={handleCopy} />
       </View>
      
       <StatusBar style="light" />

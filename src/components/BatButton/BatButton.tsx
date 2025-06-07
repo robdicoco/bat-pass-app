@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { View, Text, Pressable} from 'react-native';
 
 import { styles } from './BatButtonStyles';
@@ -7,8 +7,12 @@ import generatePassword from '../../services/passwordService';
 
 import * as Clipboard from 'expo-clipboard';
 
-export function BatButton() {
-  const [pass, setPass] = useState('');
+interface BatButtonProps {
+  onCopy?: () => void;
+}
+
+export function BatButton({ onCopy }: BatButtonProps) {
+  const [pass, setPass] = React.useState('');
 
   function generatePass() {
     setPass(generatePassword());
@@ -23,6 +27,7 @@ export function BatButton() {
 
   const copyToClipboard = async () => {
     await Clipboard.setStringAsync(pass);
+    onCopy?.();
   };
 
   return (

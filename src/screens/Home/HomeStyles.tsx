@@ -9,8 +9,8 @@ export const  styles = StyleSheet.create({
     },
     logoContainer: {
       flexDirection: 'column',
-      borderColor: '#CDC9C9',
       borderWidth: 2,
+      borderColor: '#E5BF3D',
       paddingTop: 20,
       marginBottom: 20,
       backgroundColor: '#434343',
@@ -18,9 +18,7 @@ export const  styles = StyleSheet.create({
     inputContainer: {
       width: '80%',
       flexDirection: 'column',
-      borderColor: 'red',
       alignContent: 'center',
-      borderWidth: 2,
     },
   });
   
